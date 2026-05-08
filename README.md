@@ -4,6 +4,7 @@ This repository contains extracted **ramdisk blobs** intended for:
 
 * TWRP builds
 * Android 15 development
+* OTA Version: RMX378X.15.0.0.1800
 * AOSP / custom ROM development
 * Vendor_boot ramdisk extraction
 
