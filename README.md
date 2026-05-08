@@ -3,7 +3,7 @@
 This repository contains extracted **ramdisk blobs** intended for:
 
 * TWRP builds
-* OTA VERSION: RMX378X.14.0.0.115 
+* OTA Version: RMX378X.14.0.0.115 
 * Android 14 
 * AOSP / custom ROM development
 
