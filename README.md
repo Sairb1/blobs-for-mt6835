@@ -3,11 +3,11 @@
 This repository contains extracted **ramdisk blobs** intended for:
 
 * TWRP builds
-* OTA Version: RMX378X.14.0.0.115 
-* Android 14 
+* Android 15 development
 * AOSP / custom ROM development
+* Vendor_boot ramdisk extraction
 
-⚠️ **Use at your own risk.** These files are raw dumps and may require adaptation depending on your tree and Android base.
+⚠️ Use at your own risk. These are raw extracted blobs and may require adaptation depending on your tree and Android base.
 
 ---
 
@@ -23,17 +23,23 @@ This repository contains extracted **ramdisk blobs** intended for:
 
 ## 📦 Required Firmware
 
-You must be on the exact base:
+Required firmware base:
 
-**OTA Version:** `RMX378X_14.0.0.115(EX01)`
+`RMX378X_15.0.0.1800(EX01)`
 
-Using mismatched firmware will break compatibility.
+Using mismatched firmware may break compatibility.
 
 ---
 
 ## 📂 Repository Structure
 
+```text
+ramdisk.cpio
 ```
+
+or
+
+```text
 ramdisk.cpio.gz
 ```
 
@@ -41,15 +47,15 @@ ramdisk.cpio.gz
 
 ## ⚙️ How to Extract Ramdisk
 
-### 1. Decompress
+### Decompress
 
-```
+```bash
 gzip -d ramdisk.cpio.gz
 ```
 
-### 2. Extract CPIO
+### Extract
 
-```
+```bash
 mkdir ramdisk
 cd ramdisk
 cpio -idmv < ../ramdisk.cpio
@@ -57,11 +63,9 @@ cpio -idmv < ../ramdisk.cpio
 
 ---
 
-## 🔁 How to Repack Ramdisk
+## 🔁 Repack Ramdisk
 
-After making changes:
-
-```
+```bash
 find . | cpio -o -H newc > ../ramdisk.cpio
 gzip ../ramdisk.cpio
 ```
@@ -70,21 +74,22 @@ gzip ../ramdisk.cpio
 
 ## 🧠 Notes
 
-* Built from stock vendor_boot
-* Suitable for recovery and early init debugging
-* Do NOT push raw extracted ramdisk to GitHub (breaks structure & compatibility)
+* Extracted from stock vendor_boot
+* Suitable for recovery/TWRP bringup
+* Useful for init debugging and Android 15 migration
+* Do not upload fully extracted ramdisk folders to GitHub
 
 ---
 
 ## 📢 Community
 
-Telegram Group: https://t.me/realme11x
+Telegram:
+https://t.me/realme11x
 
 ---
 
 ## ⚠️ Disclaimer
 
-This is provided for development and educational purposes only.
-Flashing or modifying these files may brick your device.
+Provided for educational and development purposes only.
 
-You are responsible for what you do with them.
+You are responsible for any damage caused by modifying or flashing these files.
